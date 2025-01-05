@@ -38,10 +38,10 @@ resource "aws_s3_bucket_policy" "cv_bucket_policy" {
 }
 
 resource "aws_s3_object" "cv_files" {
-  for_each = fileset("${path.module}/site_files", "**")
+  for_each = fileset("${path.module}/../site_files", "**")
   bucket   = aws_s3_bucket.cv_bucket.id
   key      = each.value
-  source   = "${path.module}/site_files/${each.value}"
+  source   = "${path.module}/../site_files/${each.value}"
   content_type = lookup({
     ".html" = "text/html",
     ".css"  = "text/css",
@@ -56,4 +56,4 @@ resource "aws_s3_object" "cv_files" {
 output "s3_website_url" {
   value       = aws_s3_bucket_website_configuration.website_config.website_endpoint
   description = "S3 static website URL"
-}
+}   
