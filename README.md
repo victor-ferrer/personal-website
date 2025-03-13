@@ -1,6 +1,6 @@
 # Online CV - Victor Ferrer Posa
 
-This is the code for my online CV. Accesible [here](http://mi-cv-online.s3-website.eu-west-3.amazonaws.com/) for now.
+This is the code for my online CV. Accesible [here](https://www.victorferrerposa.com/).
 
 Front end is just the default auto-generated HTML.
 
@@ -9,4 +9,3 @@ Front end is just the default auto-generated HTML.
 - Deployed in AWS
 - IaC with Terraform 1.10
 - HTML created with [HTML5UP](https://html5up.net/)
-
