@@ -72,8 +72,14 @@ resource "aws_cloudfront_distribution" "cv_distribution" {
   }
   
   viewer_certificate {
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = false
+    acm_certificate_arn = "arn:aws:acm:us-east-1:434936001443:certificate/6243b854-d492-4b80-9e06-0c51b4134fc6"
+    minimum_protocol_version = "TLSv1.2_2021"
+    ssl_support_method = "sni-only"
+
   }
+
+  aliases = ["www.victorferrerposa.com"]
 }
 
 resource "aws_route53_zone" "my_zone" {
